@@ -31,7 +31,7 @@ def stockin_orders_get():
     print('test success')
 
 
-def stockout_orders_post():
+def stockin_orders_post():
     """
     @api {POST} /api/stockin_orders 新增入库单
     @apiVersion 1.0.0
