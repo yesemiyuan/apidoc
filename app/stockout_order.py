@@ -7,10 +7,10 @@ def stockout_orders_get():
     @apiGroup 出库单
     @apiDescription 查询出库单
 
-    @apiParam {order_type} order_type 单据状态
+    @apiParam {enum} order_type 单据状态
 
-    @apiSuccess {status} 200 状态码
-    @apiSuccess {data} stockout_order_data 简略描述
+    @apiSuccess {status_code} status_code 状态码200
+    @apiSuccess {data} stockout_order_data 对应出库单
     @apiSuccessExample {Json} 成功返回:
         HTTP 1.1/ 200K
         [
@@ -21,8 +21,8 @@ def stockout_orders_get():
             }
         ]
 
-    @apiErrorExample Response-Fail:
-        HTTP 1.1/ 404K
+    @apiErrorExample {Json} 失败返回:
+        HTTP 1.1/ 422K
         {
             'status': 422,
             'msg': 'Fail'
@@ -39,7 +39,7 @@ def stockout_orders_post():
     @apiGroup 出库单
     @apiDescription 新增出库单
 
-    @apiSuccess {status} 200 状态码
+    @apiSuccess {status_code} status_code 状态码201
     @apiSuccess {data} stockout_order_data 简略描述
     @apiParamExample {Json} 请求参数示例
     {
@@ -47,7 +47,7 @@ def stockout_orders_post():
       "state": "created"
     }
     @apiSuccessExample {Json} 成功返回:
-        HTTP 1.1/ 200K
+        HTTP 1.1/ 201K
         [
             {
                 "wms_order_code": "wms001",
@@ -55,8 +55,8 @@ def stockout_orders_post():
             }
         ]
 
-    @apiErrorExample Response-Fail:
-        HTTP 1.1/ 404K
+    @apiErrorExample {Json} 失败返回:
+        HTTP 1.1/ 422K
         {
             'status': 422,
             'msg': 'err'

@@ -9,8 +9,8 @@ def stockin_orders_get():
 
     @apiParam {order_type} order_type 单据状态
 
-    @apiSuccess {status} 200 状态码
-    @apiSuccess {data} stockin_order_data 简略描述
+    @apiSuccess {status_code} status_code 状态码201
+    @apiSuccess {data} stockin_order_data 入库单数据
     @apiSuccessExample {Json} 成功返回:
         HTTP 1.1/ 200K
         [
@@ -21,8 +21,8 @@ def stockin_orders_get():
             }
         ]
 
-    @apiErrorExample Response-Fail:
-        HTTP 1.1/ 404K
+    @apiErrorExample {Json}失败返回:
+        HTTP 1.1/ 422K
         {
             'status': 422,
             'msg': 'Fail'
@@ -39,15 +39,15 @@ def stockout_orders_post():
     @apiGroup 入库单
     @apiDescription 新增入库单
 
-    @apiSuccess {status} 200 状态码
-    @apiSuccess {data} stockin_order_data 简略描述
+    @apiSuccess {status_code} status_code 状态码201
+    @apiSuccess {data} stockin_order_data 入库单wms_order_code和id
     @apiParamExample {Json} 请求参数示例
     {
       "erp_order_code": "erp001",
       "state": "created"
     }
     @apiSuccessExample {Json} 成功返回:
-        HTTP 1.1/ 200K
+        HTTP 1.1/ 201K
         [
             {
                 "wms_order_code": "wms001",
@@ -55,8 +55,8 @@ def stockout_orders_post():
             }
         ]
 
-    @apiErrorExample Response-Fail:
-        HTTP 1.1/ 404K
+    @apiErrorExample {Json} 失败返回:
+        HTTP 1.1/ 422K
         {
             'status': 422,
             'msg': 'err'

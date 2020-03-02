@@ -12,24 +12,24 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "status",
+            "type": "status_code",
             "optional": false,
-            "field": "200",
-            "description": "<p>状态码</p>"
+            "field": "status_code",
+            "description": "<p>状态码201</p>"
           },
           {
             "group": "Success 200",
             "type": "data",
             "optional": false,
             "field": "stockin_order_data",
-            "description": "<p>简略描述</p>"
+            "description": "<p>入库单wms_order_code和id</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "成功返回:",
-          "content": "HTTP 1.1/ 200K\n[\n    {\n        \"wms_order_code\": \"wms001\",\n        \"order_id\": 1\n    }\n]",
+          "content": "HTTP 1.1/ 201K\n[\n    {\n        \"wms_order_code\": \"wms001\",\n        \"order_id\": 1\n    }\n]",
           "type": "Json"
         }
       ]
@@ -46,9 +46,9 @@ define({ "api": [
     "error": {
       "examples": [
         {
-          "title": "Response-Fail:",
-          "content": "HTTP 1.1/ 404K\n{\n    'status': 422,\n    'msg': 'err'\n}",
-          "type": "json"
+          "title": "失败返回:",
+          "content": "HTTP 1.1/ 422K\n{\n    'status': 422,\n    'msg': 'err'\n}",
+          "type": "Json"
         }
       ]
     },
@@ -81,17 +81,17 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "status",
+            "type": "status_code",
             "optional": false,
-            "field": "200",
-            "description": "<p>状态码</p>"
+            "field": "status_code",
+            "description": "<p>状态码201</p>"
           },
           {
             "group": "Success 200",
             "type": "data",
             "optional": false,
             "field": "stockin_order_data",
-            "description": "<p>简略描述</p>"
+            "description": "<p>入库单数据</p>"
           }
         ]
       },
@@ -106,9 +106,9 @@ define({ "api": [
     "error": {
       "examples": [
         {
-          "title": "Response-Fail:",
-          "content": "HTTP 1.1/ 404K\n{\n    'status': 422,\n    'msg': 'Fail'\n}",
-          "type": "json"
+          "title": "失败返回:",
+          "content": "HTTP 1.1/ 422K\n{\n    'status': 422,\n    'msg': 'Fail'\n}",
+          "type": "Json"
         }
       ]
     },
@@ -128,10 +128,10 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "status",
+            "type": "status_code",
             "optional": false,
-            "field": "200",
-            "description": "<p>状态码</p>"
+            "field": "status_code",
+            "description": "<p>状态码201</p>"
           },
           {
             "group": "Success 200",
@@ -145,7 +145,7 @@ define({ "api": [
       "examples": [
         {
           "title": "成功返回:",
-          "content": "HTTP 1.1/ 200K\n[\n    {\n        \"wms_order_code\": \"wms001\",\n        \"order_id\": 1\n    }\n]",
+          "content": "HTTP 1.1/ 201K\n[\n    {\n        \"wms_order_code\": \"wms001\",\n        \"order_id\": 1\n    }\n]",
           "type": "Json"
         }
       ]
@@ -162,9 +162,9 @@ define({ "api": [
     "error": {
       "examples": [
         {
-          "title": "Response-Fail:",
-          "content": "HTTP 1.1/ 404K\n{\n    'status': 422,\n    'msg': 'err'\n}",
-          "type": "json"
+          "title": "失败返回:",
+          "content": "HTTP 1.1/ 422K\n{\n    'status': 422,\n    'msg': 'err'\n}",
+          "type": "Json"
         }
       ]
     },
@@ -184,7 +184,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "order_type",
+            "type": "enum",
             "optional": false,
             "field": "order_type",
             "description": "<p>单据状态</p>"
@@ -197,17 +197,17 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "status",
+            "type": "status_code",
             "optional": false,
-            "field": "200",
-            "description": "<p>状态码</p>"
+            "field": "status_code",
+            "description": "<p>状态码200</p>"
           },
           {
             "group": "Success 200",
             "type": "data",
             "optional": false,
             "field": "stockout_order_data",
-            "description": "<p>简略描述</p>"
+            "description": "<p>对应出库单</p>"
           }
         ]
       },
@@ -222,9 +222,9 @@ define({ "api": [
     "error": {
       "examples": [
         {
-          "title": "Response-Fail:",
-          "content": "HTTP 1.1/ 404K\n{\n    'status': 422,\n    'msg': 'Fail'\n}",
-          "type": "json"
+          "title": "失败返回:",
+          "content": "HTTP 1.1/ 422K\n{\n    'status': 422,\n    'msg': 'Fail'\n}",
+          "type": "Json"
         }
       ]
     },
